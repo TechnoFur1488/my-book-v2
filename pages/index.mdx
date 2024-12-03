@@ -1,0 +1,104 @@
+import s from "./index.module.css"
+import Link from 'next/link';
+import Image from "next/image"
+
+<h1 className={s.h1Study }>Научись программировать вместе с SyntaxSphere</h1>
+
+<p className={s.topText}>Простые учебники по языкам программирования  для самых маленьких</p>
+
+export function Main({ children }) {
+  return (
+    <Link href="/documentation/choose">{children}</Link>
+  )
+}
+ 
+<Main>**<div className={s.divButton}><span>Начать изучать</span></div>**</Main>
+
+<div className={s.containerTop}>
+  <div className={s.backImgCreate}>
+    <h3 className={s.h3Create}>Научись создавать сайт всего за час</h3>
+    <Image
+      src="/images/image.svg"
+      alt="картинка"
+      width={532}
+      height={318}
+    />
+    <Main>**<Image className={s.btnNext}
+      src="/images/Group 3.svg"
+      alt="картинка"
+      width={36}
+      height={36}
+    />**</Main>
+  </div>
+  <div className={s.myBook}>
+    <h3 className={s.h3Grand}>в нашей книге сможет разобраться даже ваша бабушка</h3>
+    <Main>**<Image className={s.btnNextS}
+      src="/images/Group 4.svg"
+      alt="картинка"
+      width={36}
+      height={36}
+    />**</Main>
+  </div>
+</div>
+
+<div className={s.divWhatFlex}>
+  <div className={s.divWhat}>
+    <h3 className={s.divWhatText}>Покажем как создавать яркие и красивые сайты</h3>
+    <Main>**<Image className={s.btnNextTs}
+      src="/images/Group 3.svg"
+      alt="картинка"
+      width={36}
+      height={36}
+    />**</Main>
+  </div>
+</div>
+
+<div className={s.divMany}>
+  <div className={s.divBig}>
+    <h3 className={s.divBigText}>обучаем самым популярным и востребованным языкам программирование</h3>
+    <Image
+      src="/images/Group 87.png"
+      alt="картинка"
+      width={532}
+      height={268}
+    />
+    <Main>**<Image className={s.btnNext}
+      src="/images/Group 3.svg"
+      alt="картинка"
+      width={36}
+      height={36}
+    />**</Main>
+  </div>
+  <div className={s.divManyS}>
+    <div className={s.fDiv}>
+      <h3 className={s.fDivText}>Показываем как и где можно импользовать код</h3>
+      <Main>**<Image className={s.btnNext}
+      src="/images/Group 3.svg"
+      alt="картинка"
+      width={36}
+      height={36}
+    />**</Main>
+    </div>
+    <div className={s.sDiv}>
+      <h3 className={s.sDivText}>Написано все простым языком</h3>
+      <Main>**<Image className={s.btnNext}
+      src="/images/Group 3.svg"
+      alt="картинка"
+      width={36}
+      height={36}
+    />**</Main>
+    </div>
+  </div>
+</div>
+
+<div className={s.bigF}>
+  <div className={s.big}>
+    <h3 className={s.bigText}>Расширь свои знания</h3>
+    <Main>**<Image className={s.btnNext}
+      src="/images/Group 3.svg"
+      alt="картинка"
+      width={36}
+      height={36}
+    />**</Main>
+  </div>
+</div>

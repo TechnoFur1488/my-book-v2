@@ -1,0 +1,17 @@
+{
+    "index": {
+        "title": "Домашняя страница",
+        "type": "page",
+        "theme": {
+            "typesetting": "article",
+            "sidebar": false,
+            "toc": false,
+            "breadcrumb": false,
+            "layout": "full"
+        }
+    },
+    "documentation": {
+        "title": "Документация",
+        "type": "page"
+    }
+}   

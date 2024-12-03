@@ -1,0 +1,210 @@
+.h1Study {
+    margin-top: 41px;
+    font-size: 64px;
+    width: 933px;
+    font-weight: bold;
+    background: linear-gradient(to right, #f0f0f0, #333333);
+    color: transparent;
+    background-clip: text;
+}
+
+.topText {
+    margin: 41px 0 53px;
+    width: 640px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.divButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 46px;
+    color: white;
+    background-color: #0479FF;
+    border-radius: 10px;
+}
+
+.containerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 33px 0 95px;
+}
+
+.backImgCreate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 874px;
+    height: 424px;
+    background-image: url("../public/images/image\ \(1\).svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.h3Create {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 27px 0;
+    color: white;
+}
+
+.btnNext {
+    opacity: 0;
+    position: relative;
+    bottom: 60%;
+    left: 1100%;
+    transition: opacity 0.5s ease;
+}
+
+.backImgCreate:hover .btnNext {
+    opacity: 1;
+}
+
+.myBook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 440px;
+    height: 440px;
+    background-image: url("../public/images/Group\ 85.png");
+    background-repeat: no-repeat;
+}
+
+.h3Grand {
+    text-align: center;
+    font-size: 32px;
+    width: 243px;
+    color: black;
+}
+
+.divWhatFlex {
+    display: flex;
+    justify-content: center;
+}
+
+.divWhat {
+    width: 914px;
+    height: 427px;
+    background-image: url("../public/images/Group\ 86.png");
+    background-repeat: no-repeat;
+}
+
+.divWhatText{
+    padding-top: 67px;
+    text-align: center;
+    height: 232px;
+    width: 262px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.divBig {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 671px;
+    height: 452px;
+    border-radius: 30px;
+    background-color: #202020;
+}
+
+.divBigText {
+    padding-top: 14px;
+    width: 383px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.fDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 558px;
+    height: 175px;
+    border-radius: 30px;
+    background-color: #202020;
+}
+
+.fDivText {
+    width: 376px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.sDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 558px;
+    height: 175px;
+    border-radius: 30px;
+    background-color: #202020;
+}
+
+.sDivText {
+    width: 376px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.divMany {
+    padding-top: 95px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.divManyS {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bigF {
+    display: flex;
+    justify-content: center;
+}
+
+.big {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 95px;
+    width: 1078px;
+    height: 234px;
+    font-size: 32px;
+    font-weight: bold;
+    background-image: url("../public/images/Group\ 89.png");
+    background-repeat: no-repeat;
+}
+
+.btnNextS {
+    opacity: 0;
+    position: relative;
+    margin-top: 350px;
+    left: 29px;
+    transition: opacity 0.5s ease;
+}
+
+.myBook:hover .btnNextS {
+    opacity: 1;
+}
+
+s.btnNextTs {
+    width: 20px;
+    opacity: 0;
+    position: absolute;
+    
+    transition: opacity 0.5s ease;
+}
+
+.divWhat:hover .btnNextTs {
+    opacity: 1;
+}
