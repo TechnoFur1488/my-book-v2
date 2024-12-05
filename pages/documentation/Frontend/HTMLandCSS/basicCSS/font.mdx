@@ -1,0 +1,135 @@
+# Свойство-сокращение font в CSS
+
+В предыдущем уроке мы разобрали много свойств для текста. Зачастую достаточно накладно отдельно прописывать каждое из этих свойств, поэтому в CSS для большего удобства существует специальное свойство-сокращение font. Данное свойство позволяет одновременно задать размер шрифта, семейство, жирность, курсив и межстрочный интервал.
+
+Описываемое свойство имеет следующий синтаксис:
+
+font-style font-weight font-size / line-height font-family
+
+При этом порядок свойств имеет значение, и обязательными являются font-size и font-family. Обратите внимание на то, что другие свойства, кроме описанных выше в синтаксисе, не входят в данное свойство сокращение.
+
+Давайте посмотрим на примерах.
+
+## Пример 1
+
+Пусть у нас есть следующие стили:
+
+```css showLineNumbers copy
+p {
+	font-size: 16px;
+	font-family: Arial;
+}
+```
+
+Давайте перепишем их через свойство-сокращение:
+
+```css showLineNumbers copy
+p {
+	font: 16px Arial;
+}
+```
+
+## Пример 2
+
+Пусть у нас есть следующие стили:
+
+```css showLineNumbers copy
+p {
+	font-size: 16px;
+	font-family: Arial;
+	line-height: 50px;
+}
+```
+
+Давайте перепишем их через свойство-сокращение:
+
+```css showLineNumbers copy
+p {
+	font: 16px/50px Arial;
+}
+```
+
+## Пример 3
+
+Пусть у нас есть следующие стили:
+
+```css showLineNumbers copy
+p {
+	font-size: 16px;
+	font-family: Arial;
+	font-weight: bold;
+}
+```
+
+Давайте перепишем их через свойство-сокращение:
+
+```css showLineNumbers copy
+p {
+	font: bold 16px Arial;
+}
+```
+
+## Пример 4
+
+Пусть у нас есть следующие стили:
+
+```css showLineNumbers copy 
+p {
+	font-size: 16px;
+	font-family: Arial;
+	font-weight: bold;
+	line-height: 50px;
+	font-style: italic;
+}
+```
+
+Давайте перепишем их через свойство-сокращение:
+
+```css showLineNumbers copy 
+p {
+	font: bold italic 16px/50px Arial;
+}
+```
+
+## Задание
+
+### Задание №1
+
+Сократите код, используя свойство-сокращение font:
+
+```css showLineNumbers copy
+p {
+	font-family: "Times New Roman";
+	font-size: 13px;
+	line-height: 20px;
+}
+```
+
+### Задание №2
+
+Сократите код, используя свойство-сокращение font:
+
+```css showLineNumbers copy 
+p {
+	width: 300px;
+	font-family: Arial;
+	color: red;
+	font-size: 40px;
+	font-weight: bold;
+}
+```
+
+### Задание №3
+
+Сократите код, используя свойство-сокращение font:
+
+```css showLineNumbers copy 
+p {
+	font-family: Arial;
+	font-size: 40px;
+	font-weight: bold;
+	text-indent: 50px;
+	font-style: italic;
+	line-height: 60px;
+}
+```

@@ -1,0 +1,38 @@
+# Выравнивание текста влево в CSS
+
+А вот значение left для абзацев можно и не ставить - они по умолчанию и так выровнены по левому краю. Однако есть элементы, которые по умолчанию стоят по центру (это, например, теги th, которые делают ячейку-заголовок таблицы). И вот для них как раз-таки и может потребоваться выравнивание по левой стороне. Сделаем это:
+
+```js showLineNumbers copy
+<table border="1">
+	<tr>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>Salary</th>
+	</tr>
+	<tr>
+		<td>John</td>
+		<td>Smith</td>
+		<td>200$</td>
+	</tr>
+	<tr>
+		<td>Nick</td>
+		<td>Mayers</td>
+		<td>300$</td>
+	</tr>
+	<tr>
+		<td>Alex</td>
+		<td>Jonson</td>
+		<td>400$</td>
+	</tr>
+</table>
+```
+
+```css showLineNumbers copy 
+th {
+	text-align: left;
+}
+
+table {
+	width: 400px;
+}
+```

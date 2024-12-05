@@ -1,0 +1,58 @@
+# Фиксированное позиционирование в CSS
+
+Сейчас мы разберемся с фиксированным позиционированием. Оно похоже на абсолютное, разница проявляется в том, как ведут себя эти типы позиционирования при наличии полосы прокрутки.
+
+При прокручивании страницы абсолютно спозиционированные элементы будут прокручиваться вместе со страницей. Смотрите пример:
+
+```js showLineNumbers copy 
+<div id="elem"></div>
+<div id="content">
+	long text...
+</div>
+```
+
+```css showLineNumbers copy 
+#elem {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+
+#content {
+	margin: 0 auto;
+	width: 300px;
+	text-align: justify;
+	font: 16px Arial;
+}
+```
+
+Можно сделать так, чтобы при прокручивании страницы спозиционированный элемент оставался на месте. Для этого ему нужно задать фиксированное позиционирование с помощью свойства position в значении fixed:
+
+```js showLineNumbers copy 
+<div id="elem"></div>
+<div id="content">
+	длинный текст, чтобы появилась полоса прокрутки
+</div>
+```
+
+```css showLineNumbers copy
+#elem {
+	position: fixed; /* задаем фиксированное позиционирование */
+	top: 30px;
+	right: 30px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+
+#content {
+	margin: 0 auto;
+	width: 300px;
+	text-align: justify;
+	font: 16px Arial;
+}
+```
+

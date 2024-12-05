@@ -1,0 +1,63 @@
+# Отрицательные значения при позиционировании в CSS
+
+Изученные нами свойства top, right, bottom и left могут принимать не только положительные, но и отрицательные значения. Давайте посмотрим на примерах.
+
+## Примеры
+
+### Пример 1
+
+В следующим примере элемент абсолютно позиционируется относительно своего родителя и стоит в позиции 0 сверху, 0 слева:
+
+```js showLineNumbers copy
+<div id="parent">
+	<div id="child"></div>
+</div>
+```
+
+```css showLineNumbers copy 
+#parent {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: 50px auto;
+	border: 1px solid red;
+}
+#child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+``` 
+
+### Пример 2
+
+А теперь давайте передвинем элемент в позицию -20px сверху, -30px слева:
+
+```js showLineNumbers copy
+<div id="parent">
+	<div id="child"></div>
+</div>
+```
+
+```css showLineNumbers copy
+#parent {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: 50px auto;
+	border: 1px solid red;
+}
+#child {
+	position: absolute;
+	top: -20px;
+	left: -30px;
+	
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+```

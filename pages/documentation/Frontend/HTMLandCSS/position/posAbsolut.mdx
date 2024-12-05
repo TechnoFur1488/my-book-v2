@@ -1,0 +1,163 @@
+# Абсолютное позиционирование элементов в CSS
+
+В данном уроке мы разберем абсолютное позиционирование элементов. Оно позволяет располагать элементы по указанным координатам страницы. Например, можно расположить элемент в позицию 100px сверху страницы и 200px слева. Элемент переместится туда, не взирая на то, что там будут располагаться другие элементы и просто станет поверх их. Говорят, что при этом элемент выпадает из нормального потока документа: все остальные элементы будут вести себя так, будто нашего элемента нет.
+
+Для того, чтобы сделать элемент абсолютно спозиционированным, этому элементу необходимо задать свойство position в значении absolute. Кроме этого свойства, нужны еще два: одно будет задавать координату по вертикали, а второе - по горизонтали.
+
+Для вертикали нужно задать отступ или сверху, или снизу. Отступ сверху задает свойство top, а отступ снизу - свойство bottom. Для горизонтали нужно задать отступ или слева, или справа. Отступ слева задает свойство left, а отступ справа - свойство right.
+
+Давайте посмотрим на примерах.
+
+## Примеры
+
+### Пример 1
+
+Для начала давайте просто сделаем два блока без позиционирования (обратите внимание на то, что элементы не прижаты к краю окна, так как body имеет margin по умолчанию):\
+
+```js showLineNumbers copy 
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+#elem2 {
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+
+### Пример 2
+
+Давайте теперь зеленому блоку зададим абсолютное позиционирование, поставив его в позицию сверху 150px и слева 100px:
+
+```js showLineNumbers copy
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+#elem2 {
+	position: absolute;
+	top: 150px;
+	left: 100px;
+	
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+
+### Пример 3
+
+Давайте теперь поставим зеленый блок в позицию 0px сверху и 0px слева:
+
+```js showLineNumbers copy
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+#elem2 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+
+### Пример 4
+
+Давайте теперь поставим зеленый блок в позицию 0px сверху и 0px справа:
+
+```js showLineNumbers copy 
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+#elem2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+
+### Пример 5
+
+Давайте теперь поставим зеленый блок в позицию 0px снизу и 0px справа:
+
+```js showLineNumbers copy
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+#elem2 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+
+### Пример 6
+
+Давайте теперь поставим зеленый блок в позицию 0px снизу и 0px слева:
+
+```js showLineNumbers copy
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy 
+#elem1 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+#elem2 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+```

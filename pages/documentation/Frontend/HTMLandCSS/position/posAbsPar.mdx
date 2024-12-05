@@ -1,0 +1,90 @@
+# Позиционирование относительно родителя в CSS
+
+Если элементу задан relative, а его потомку - absolute, то этот потомок будет позиционироваться относительно своего родителя, а не относительно окна браузера.
+
+Как правило, в таком случае родителю указывают relative без смещений. В этом случае с этим родителем ничего не происходит, но все его потомки теперь будут позиционироваться относительно него.
+
+Давайте посмотрим на примерах.
+
+## Пример
+
+### Пример 1
+
+Для начала давайте просто сделаем блок-родитель и блок-потомок без позиционирования:
+
+```js showLineNumbers copy 
+<div id="parent">
+	<div id="child"></div>
+</div>
+```
+
+```css showLineNumbers copy
+#parent {
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+	border: 1px solid red;
+}
+#child {
+	width: 200px;
+	height: 200px;
+	border: 1px solid green;
+}
+```
+
+### Пример 2
+
+Давайте теперь абсолютно спозиционируем зеленый блок. Так как родителю не указан relative, то потомок будет позиционироваться относительно окна браузера:
+
+```js showLineNumbers copy
+<div id="parent">
+	<div id="child"></div>
+</div>
+```
+
+```css showLineNumbers copy
+#parent {
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+	border: 1px solid red;
+}
+#child {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	
+	width: 200px;
+	height: 200px;
+	border: 1px solid green;
+}
+```
+
+### Пример 3
+
+Укажем теперь родителю relative. В этом случае потомок будет позиционироваться относительно своего родителя:
+
+```js showLineNumbers copy
+<div id="parent">
+	<div id="child"></div>
+</div>
+```
+
+```css showLineNumbers copy 
+#parent {
+	position: relative;
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+	border: 1px solid red;
+}
+#child {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	
+	width: 200px;
+	height: 200px;
+	border: 1px solid green;
+}
+```

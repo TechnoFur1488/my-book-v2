@@ -1,3 +1,11 @@
 {
-    "basic": "Основы HTML"
+    "basicHTML": "Основы HTML",
+    "basicCSS": "Основы CSS",
+    "selector": "Селекторы",
+    "registration": "Оформление",
+    "model": "Блочная модель",
+    "position": "Позиционирование",
+    "float": "Флоаты",
+    "flex": "Флексы",
+    "grid": "Гриды"
 }

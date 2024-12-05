@@ -1,0 +1,133 @@
+# Относительное позиционирование элементов в CSS
+
+Относительное позиционирование задается с помощью значения relative для свойства position. Такое позиционирование позволяет сдвигать элементы относительно своего текущего положения на заданную величину. При этом все остальные элементы страницы будут думать, что элемент стоит там, где и стоял изначально. То есть при таком типе позиционирования элемент не выпадает из нормального потока.
+
+Смещения от текущего положения задаются свойствами top, right, bottom и left.
+
+## Примеры
+
+### Пример 1
+
+Для начала давайте просто сделаем два блока без позиционирования:
+
+```js showLineNumbers copy
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+#elem2 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+```
+
+### Пример 2
+
+Добавим теперь первому блоку relative. От этого пока ничего не поменяется, так как мы не указали смещение блока:
+
+```js showLineNumbers copy
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+#elem2 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+```
+
+### Пример 3
+
+Давайте теперь отодвинем наш блок на 30px сверху, указав ему свойство top. При этом все остальные элементы будут вести себя так, будто наш блок остался том месте, где был изначально:
+
+
+
+```js showLineNumbers copy
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	position: relative;
+	top: 30px;
+	
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+#elem2 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+```
+
+### Пример 4
+
+Давайте также отодвинем наш блок на 40px слева, указав ему свойство left:
+
+```js showLineNumbers copy
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	position: relative;
+	top: 30px;
+	left: 40px;
+	
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+#elem2 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+```
+
+### Пример 5
+
+Отрицательные значения свойств top, right, bottom и left сдвигают в противоположном направлении. К примеру, положительное значение top сдвигает вниз, а отрицательное - вверх.
+
+Давайте отодвинем наш второй блок на 40px вверх, указав ему отрицательное значение свойства top:
+
+```js showLineNumbers copy
+<div id="elem1"></div>
+<div id="elem2"></div>
+```
+
+```css showLineNumbers copy
+#elem1 {
+	width: 100px;
+	height: 100px;
+	border: 1px solid green;
+}
+#elem2 {
+	position: relative;
+	top: -40px;
+	left: 20px;
+	
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+```
