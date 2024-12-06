@@ -1,0 +1,17 @@
+{
+    "basicFLoat": "Введение в свойство float",
+    "floatSvos": "Свойство float и теги",
+    "floatMar": "Сочетание float и margin",
+    "floatPad": "Сочетание float и padding",
+    "floatPla": "Плавающие элементы под тегами",
+    "floatPar": "Действие флоатов на родителя",
+    "floatHei": "Высота родителя флоатов",
+    "floatTextPar": "Текст в родителе флоатов",
+    "obt": "Обтекание",
+    "noneObt": "Отмена обтекания",
+    "otDiv": "Отдельный див с клиарфиксом",
+    "heightPar": "Высота родителя и клиарфикс",
+    "floatBlock": "Свойство float для блоков",
+    "floatManyBlock": "Свойство float и несколько блоков",
+    "floatNoneText": "Свойство float и родитель без текста"
+}

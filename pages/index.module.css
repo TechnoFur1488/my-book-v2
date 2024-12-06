@@ -87,10 +87,23 @@
 }
 
 .divWhat {
+    position: relative;
     width: 914px;
     height: 427px;
     background-image: url("../public/images/Group\ 86.png");
     background-repeat: no-repeat;
+}
+
+.btnNextT{
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.divWhat:hover .btnNextT {
+    opacity: 1;
 }
 
 .divWhatText{
