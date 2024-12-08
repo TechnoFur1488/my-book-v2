@@ -1,0 +1,27 @@
+# Отдельный див с клиарфиксом в CSS
+
+На самом деле клиарфикс чаще всего используют в виде отдельного дива, который ставится перед тем дивом, для которого вы хотите отменить налезание, вот так:
+
+```js showLineNumbers copy
+<div class="parent">
+	<img src="img.png" alt="">
+	text
+</div>
+<div class="clearfix"></div>
+<div class="parent">
+	text
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	border: 1px solid red;
+}
+.parent img {
+	float: left;
+}
+
+.clearfix {
+	clear: both;
+}
+```

@@ -1,0 +1,76 @@
+# Свойство float и родитель без текста в CSS
+
+Пусть теперь у нас есть див с классом parent без текста, но с двумя блоками-потомками с классом child:
+
+```js showLineNumbers copy
+<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	width: 500px;
+	border: 1px solid red;
+	text-align: justify;
+}
+.child {
+	width: 200px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+
+Давайте сделаем блоки-потомки плавающими слева и посмотрим, что будет:
+
+```js showLineNumbers copy
+<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	width: 500px;
+	border: 1px solid red;
+	text-align: justify;
+}
+.child {
+	float: left;
+	width: 200px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+
+Как мы видим, блоки-потомки выстроились в ряд, однако, высота родителя пропала и наши блоки высунулись за него вниз.
+
+Такое поведение нам уже известно. Для решения проблемы следует использовать клиарфикс. Сделаем это:
+
+```js showLineNumbers copy
+<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+	<div class="clearfix"></div>
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	width: 500px;
+	border: 1px solid red;
+	text-align: justify;
+}
+.child {
+	float: left;
+	width: 200px;
+	height: 100px;
+	border: 1px solid green;
+}
+
+.clearfix {
+	clear: both;
+}
+```

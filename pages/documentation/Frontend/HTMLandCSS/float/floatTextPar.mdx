@@ -1,0 +1,96 @@
+# Текст в родителе флоатов в CSS
+
+Давайте уберем свойство height для дива и поставим небольшой текст перед картинкой.
+
+В этом случае высота нашего дива будет равна высоте текста, а картинка по-прежнему вылезет за див:
+
+```js showLineNumbers copy
+<div>
+	text
+	<img src="img.png" alt="">
+</div>
+```
+
+```css showLineNumbers copy
+div {
+	border: 1px solid red;
+}
+img {
+	float: right;
+}
+```
+Давайте поставим текст после картинки - результат не изменится:
+
+```js showLineNumbers copy
+<div>
+	<img src="img.png" alt="">
+	text
+</div>
+```
+
+```css showLineNumbers copy
+div {
+	border: 1px solid red;
+}
+img {
+	float: right;
+}
+```
+
+Давайте сделаем так, чтобы картинка плавала по левому краю - результат будет аналогичным:
+
+```js showLineNumbers copy
+<div>
+	<img src="img.png" alt="">
+	text
+</div>
+```
+```css showLineNumbers copy
+div {
+	border: 1px solid red;
+}
+img {
+	float: left;
+}
+```
+Давайте снизу добавим еще один див - картинка налезет и на него:
+
+```js showLineNumbers copy
+<div>
+	<img src="img.png" alt="">
+	text
+</div>
+<div>
+	text
+</div>
+```
+```css showLineNumbers copy
+div {
+	border: 1px solid red;
+}
+img {
+	float: left;
+}
+```
+Если же в первый див добавить настолько много текста, что по высоте он будет больше картинки - она не будет налезать на второй див:
+
+```js showLineNumbers copy  
+<div>
+	<img src="img.png" alt="">
+	long text...
+</div>
+<div>
+	text
+</div>
+```
+
+```css showLineNumbers copy
+div {
+	text-align: justify;
+	border: 1px solid red;
+}
+img {
+	float: left;
+}
+```
+Этот момент очень важен - при разработке может быть такое, что в каком-то блоке у вас достаточно много текста, а затем при реальной работе сайта в этом блоке будет меньше текста, чем запланировано. Получится, что в этом случае проявится проблема с налезанием плавающих элементов на соседние блоки.

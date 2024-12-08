@@ -1,1 +1,49 @@
-    
+# Свойство float и несколько блоков в CSS
+
+Пусть теперь рядом в HTML коде будет не один див-потомок, а два и обоим задан float в значении left. Давайте посмотрим, что будет:
+
+```js showLineNumbers copy
+<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+	long text...
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	border: 1px solid red;
+	text-align: justify;
+}
+.child {
+	float: left;
+	width: 200px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+Итак, как мы видим, два блока-потомка выстроились в ряд, причем первый в HTML коде блок будет расположен слева.
+
+Давайте теперь вместо значения left напишем значение right. В этом случае блоки будут плавать справа, причем порядок их поменяется на обратный по сравнению с порядком в HTML коде:
+
+```js showLineNumbers copy
+<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+	long text...
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	border: 1px solid red;
+	text-align: justify;
+}
+.child {
+	float: right;
+	width: 200px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+

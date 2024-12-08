@@ -1,0 +1,19 @@
+# Высота родителя флоатов в CSS
+
+Хотя плавающие элементы не расширяют своего родителя по высоте, мы можем сами задать ему высоту с помощью свойства height. Сделаем это:
+
+```js showLineNumbers copy
+<div>
+	<img src="img.png" alt="">
+</div>
+```
+
+```css showLineNumbers copy
+div {
+	height: 100px;
+	border: 1px solid red;
+}
+img {
+	float: right;
+}
+```

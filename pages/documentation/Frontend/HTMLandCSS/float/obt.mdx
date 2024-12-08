@@ -1,0 +1,26 @@
+# Обтекание в CSS
+
+Пусть сейчас у нас есть два дива с классом parent. В каждом из них есть небольшой текст, а в первом диве размещена картинка, которой задано свойство float в значении left.
+
+Как вы уже знаете, в этом случае картинка налезет на второй блок:
+
+```js showLineNumbers copy
+<div class="parent">
+	<img src="img.png" alt="">
+	text
+</div>
+<div class="parent">
+	text
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	border: 1px solid red;
+}
+.parent img {
+	float: left;
+}
+```
+
+Давайте рассмотрим в следующих уроках, как избежать такого налезания или обтекания.

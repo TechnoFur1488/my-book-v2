@@ -1,0 +1,48 @@
+# Свойство float для блоков в CSS
+
+Свойство float применимо не только к картинкам, но и к любым другим блокам.
+
+Давайте проверим это.
+
+Пусть у нас есть див-родитель с классом parent, а внутри него находится текст и див-потомок с классом child. Обоим дивам задана граница, а диву потомку еще и ширина с высотой:
+
+```js showLineNumbers copy
+<div class="parent">
+	<div class="child"></div>
+	long text...
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	border: 1px solid red;
+	text-align: justify;
+}
+.child {
+	width: 200px;
+	height: 100px;
+	border: 1px solid green;
+}
+```
+
+Давайте теперь диву-потомку установим float в значение left - текст начнет обтекать наш блок:
+
+```js showLineNumbers copy
+<div class="parent">
+	<div class="child"></div>
+	long text...
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	border: 1px solid red;
+	text-align: justify;
+}
+.child {
+	float: left;
+	width: 200px;
+	height: 100px;
+	border: 1px solid green;
+}
+```

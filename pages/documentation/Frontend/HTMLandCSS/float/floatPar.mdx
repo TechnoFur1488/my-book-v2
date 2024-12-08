@@ -1,0 +1,52 @@
+# Действие флоатов на родителя в CSS
+
+Пусть теперь у нас есть див, в котором лежит картинка. Диву зададим границу, а картинке пока не будем задавать свойство float.
+
+Давайте посмотрим, как это будет выглядеть в браузере:
+
+```js showLineNumbers copy
+<div>
+	<img src="img.png" alt="">
+</div>
+```
+
+```css showLineNumbers copy
+div {
+	border: 1px solid red;
+}
+```
+Теперь давайте установим картинке свойство float в значении left. В этом случае произойдет удивительная вещь - высота родителя исчезнет, его нижняя граница будет начинаться сразу после верхней, а картинка вылезет снизу за своего родителя:
+
+```js showLineNumbers copy
+<div>
+	<img src="img.png" alt="">
+</div>
+```
+
+```css showLineNumbers copy
+div {
+	border: 1px solid red;
+}
+img {
+	float: left;
+}
+```
+
+Получается, что элементы, которым задано свойство float, не расширяют своего родителя по высоте.
+
+Давайте свойству float вместо left напишем значение right. Поведение родителя не изменится, но картинка начнет плавать справа:
+
+```js showLineNumbers copy
+<div>
+	<img src="img.png" alt="">
+</div>
+```
+
+```css showLineNumbers copy
+div {
+	border: 1px solid red;
+}
+img {
+	float: right;
+}
+```
