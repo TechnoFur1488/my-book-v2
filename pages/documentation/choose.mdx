@@ -1,0 +1,51 @@
+import Link from 'next/link';
+import s from "./choose.module.css"
+import Image from "next/image"
+
+# SyntaxSphere
+
+SyntaxSphere создан для тех, кто хочет погрузиться в увлекательный мир кодирования, изучить новые языки и улучшить свои навыки программирования. Здесь вы найдете обширные ресурсы, включая уроки, руководства, статьи и практические задания, которые помогут вам стать уверенным разработчиком.
+
+## Для начала выберите направление
+
+<div className={s.divMain}>
+    <div className={s.div}>
+        <h3 className={s.textH3}>Frontend</h3>
+        <div className={s.line}></div>
+        клиентская часть продукта (интерфейс, с которым взаимодействует пользователь). В случае с сайтом ее формирует и выводит на экран браузер, который работает с HTML, CSS и JavaScript.
+        
+        <Link href="Frontend" className={s.st}>
+            <Image className={s.btnNext}
+              src="/images/Group 3.svg"
+              alt="картинка"
+              width={36}
+              height={36}/>
+        </Link>
+    </div>
+    <div className={`${s.div} ${s.sec}`}>
+        <h3 className={s.textH3}>Database</h3>
+        <div className={s.line}></div>
+        организованная коллекция данных, которая позволяет эффективно хранить, управлять и извлекать информацию
+        
+        <Link href="Backend" className={s.st}>
+            <Image className={s.btnNext}
+            src="/images/Group 3.svg"
+            alt="картинка"
+            width={36}
+            height={36}/>
+        </Link>
+    </div>
+    <div className={s.div}> 
+        <h3 className={s.textH3}>Backend</h3>
+        <div className={s.line}></div>
+        внутренняя часть продукта, которая находится на сервере и скрыта от пользователей. Для ее разработки могут использоваться самые разные языки, например, Python, PHP, Go, JavaScript, Java, С#.
+        
+        <Link href="Database" className={s.st}>
+            <Image className={s.btnNext}
+            src="/images/Group 3.svg"
+            alt="картинка"
+            width={36}
+            height={36}/>
+        </Link>
+    </div>
+</div>
