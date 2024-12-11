@@ -1,0 +1,113 @@
+# Объект запроса в Express
+
+Сейчас мы разберемся с возможностями объекта запроса. Для этого будем считать, что вбитый в адресную строку URL выглядит следующим образом:
+
+http://localhost:3000/dir/page.html?get1=1&get2=2
+
+Напишем обработчик этого урла:
+
+```js showLineNumbers copy 
+app.get('/dir/page.html', function(req, res) {
+	
+});
+```
+
+Как вы видите, в обработчике мы указываем адрес без протокола, домена и порта, а также без строки запроса. Давайте посмотрим, какую информацию о запросе мы можем получить с помощью объекта запроса.
+
+## Путь
+
+С помощью свойства path мы можем получить запрошенный адрес без протокола, хоста, порта и строки запроса:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.path); // выведет '/dir/page.html'
+});
+```
+
+## Урл
+
+С помощью свойства url мы можем получить запрошенный адрес с путем и строкой запроса:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.url); // выведет '/dir/page.html?get1=1&get2=2'
+});
+```
+При этом свойство url может быть изменено Express при работе маршрутизации. Поэтому существует специальное свойство originalUrl, которое гарантированно будет содержать оригинальный урл:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.originalUrl); // выведет '/dir/page.html?get1=1&get2=2'
+});
+```
+
+## Строка запроса
+
+С помощью свойства query мы можем получить строку запроса в виде объекта с ключами и значениями:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.query); // содержит объект {get1: '1', get2: '2'}
+});
+```
+
+Давайте для примера получим значение GET параметра с именем get1:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.query.get1); // выведет '1'
+});
+```
+
+## Протокол
+
+С помощью свойства protocol мы можем получить протокол:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.protocol); // выведет 'http'
+});
+```
+
+Есть также свойство secure, которое содержит true для HTTPS протокола, и false - для обычного HTTP:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.secure); // выведет false
+});
+```
+## Заголовки
+
+С помощью свойства headers мы можем получить заголовки запроса:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.headers);
+});
+```
+
+## Языки
+
+С помощью метода acceptsLanguages мы можем получить предпочитаемые пользователем языки:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.acceptsLanguages());
+});
+```
+
+## IP адрес
+
+С помощью свойства ip мы можем получить IP адрес пользователя:
+
+```js showLineNumbers copy
+app.get('/dir/page.html', function(req, res) {
+	console.log(req.ip);
+});
+```
+
+## Задания
+
+### Задание 1
+
+Самостоятельно опробуйте работу описанный свойств.  

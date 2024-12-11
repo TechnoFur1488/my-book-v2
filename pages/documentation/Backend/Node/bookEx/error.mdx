@@ -1,0 +1,53 @@
+# Выдача 404 ошибки в Express
+
+Пусть у нас есть ряд маршрутов, которые может обработать наш сайт:
+
+```js showLineNumbers copy
+app.get('/1/', function(req, res) {
+	res.send('page1');
+});
+
+app.get('/2/', function(req, res) {
+	res.send('page2');
+});
+```
+
+Очевидно, что если будет запрошен адрес, который мы не обрабатываем, то должна отдаться 404 ошибка. Express, однако, не делает этого по умолчанию. Но это легко реализовать.
+
+В этом нам поможет специальный метод app.use. Он позволяет перехватывать все необработанные адреса:
+
+```js showLineNumbers copy
+app.use(function(req, res) {
+	console.log('test');
+});
+```
+
+Давайте с помощью этого метода отдадим 404 ошибку:
+
+```js showLineNumbers copy
+app.use(function(req, res) {
+	res.status(404).send('not found');
+});
+```
+
+Разместим теперь нашу конструкцию после всех app.get:
+
+```js showLineNumbers copy
+app.get('/1/', function(req, res) {
+	res.send('page1');
+});
+
+app.get('/2/', function(req, res) {
+	res.send('page2');
+});
+
+app.use(function(req, res) {
+	res.status(404).send('not found');
+});
+```
+
+## Задания
+
+### Задание 1
+
+Сделайте на вашем сайте несколько адресов, которые будут отдавать какой-нибудь текст. В случае, если будет запрошен какой-то другой адрес - отдайте 404 ошибку.

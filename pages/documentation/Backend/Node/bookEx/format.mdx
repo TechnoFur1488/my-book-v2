@@ -1,0 +1,150 @@
+# Формирование HTML по запросу в Express
+Пусть у нас есть некоторый маршрут:
+
+```js showLineNumbers copy
+app.get('/test/', function(req, res) {
+	
+});
+```
+
+Пусть у нас также есть переменная с некоторым HTML кодом:
+
+```js showLineNumbers copy
+let str = `<div>
+	<p>text1</p>
+	<p>text2</p>
+	<p>text3</p>
+</div>`;
+```
+
+Давайте вернем этот HTML из переменной в качестве нашего ответа:
+
+```js showLineNumbers copy
+app.get('/test/', function(req, res) {
+	res.send(str);
+});
+```
+
+## Массивы
+
+Пусть у нас есть массив:
+
+```js showLineNumbers copy
+let arr = ['a', 'b', 'c'];
+```
+
+Давайте с помощью цикла сформируем из элементов этого массива список ul и отправим его в браузер:
+
+```js showLineNumbers copy
+let arr = ['a', 'b', 'c'];
+
+app.get('/test/', function(req, res) {
+	let result = '<ul>';
+	
+	for (let elem of arr) {
+		result += '<li>' + elem + '</li>';
+	}
+	
+	result += '</ul>';
+	res.send(result);
+});
+```
+
+## Задания 
+
+### Задание 1
+
+Дан следующий массив:
+
+```js showLineNumbers copy
+let users = ['user1', 'user2', 'user3', 'user4', 'user5'];
+```
+
+Создайте маршрут, который будет отправлять в браузер запрошенный элемент этого массива.
+
+## Массив объектов
+
+Пусть теперь у нас есть следующий массив объектов:
+
+```js showLineNumbers copy
+let prods = [
+	{
+		name: 'prod1',
+		cost: 1000,
+	},
+	{
+		name: 'prod2',
+		cost: 2000,
+	},
+	{
+		name: 'prod3',
+		cost: 3000,
+	},
+];
+```
+
+Давайте также сделаем маршрут, возвращающий все продукты в виде списка ul:
+
+```js showLineNumbers copy
+app.get('/prods/', function(req, res) {
+	let result = '<ul>';
+	
+	for (let prod of prods) {
+		result += '<li>' + prod.name + ' ' + prod.cost + '</li>';
+	}
+	
+	result += '</ul>';
+	
+	res.send(result);
+});
+```
+
+### Задание 2
+
+Дан следующий массив объектов:
+
+```js showLineNumbers copy
+let users = [
+	{
+		name: 'user1',
+		age:  31,
+	},
+	{
+		name: 'user2',
+		age:  32,
+	},
+	{
+		name: 'user3',
+		age:  33,
+	},
+];
+```
+
+Сделайте маршрут, возвращающий всех юзеров в виде списка ul.
+
+### Задание 3
+
+Дан следующий массив объектов:
+
+```js showLineNumbers copy
+let employees = [
+	{
+		surname: 'surname1',
+		name:    'user1',
+		salary:  1000,
+	},
+	{
+		surname: 'surname2',
+		name:    'user2',
+		salary:  2000,
+	},
+	{
+		surname: 'surname3',
+		name:    'user3',
+		salary:  3000,
+	},
+];
+```
+
+Сделайте маршрут, возвращающий всех работников в виде HTML таблицы.
+

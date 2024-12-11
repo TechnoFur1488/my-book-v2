@@ -1,0 +1,61 @@
+# Объект ответа в Express
+
+Давайте теперь разберемся с возможностями объекта ответа. Как вы уже знаете, у него есть метод send, позволяющий отправить данные в браузер:
+
+```js showLineNumbers copy
+app.get('/', function(req, res) {
+	res.send('hello world');
+});
+```
+
+## Код ответа
+
+По умолчанию Express отправляет данные с кодом 200. С помощью метода status можно поменять код ответа:
+
+```js showLineNumbers copy
+app.get('/page/sfdsdf/', function(req, res) {
+	res.status(404).send('hello world');
+});
+```
+## Задания 
+
+### Задание 1
+
+При запросе какой-нибудь страницы отдайте статус 403.
+
+## Редирект
+
+С помощью метода redirect можно выполнить перенаправление:
+
+```js showLineNumbers copy
+app.get('/page/sfdsdf/', function(req, res) {
+	res.redirect('/');
+});
+```
+
+По умолчанию код редиректа будет 302 (найдено). Можно изменить этот код первым параметром метода:
+
+```js showLineNumbers copy
+app.get('/page/sfdsdf/', function(req, res) {
+	res.redirect(301, '/');
+});
+```
+
+### Задание 2
+
+Напишите код, который для какого-нибудь адреса выполнит 303 редирект.
+
+## Тип ответа
+
+С помощью метода type можно сменить тип ответа:
+
+```js showLineNumbers copy
+app.get('/', function(req, res) {
+	res.type('text/plain');
+	res.send('hello world');
+});
+```
+
+### Задание 3
+
+Сделайте маршрут, который будет отдавать какой-нибудь JSON. Корректно установите тип содержимого.

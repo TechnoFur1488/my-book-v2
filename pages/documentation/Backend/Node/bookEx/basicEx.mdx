@@ -1,0 +1,97 @@
+# Введение в Express    
+Express представляет собой фреймворк, позволяющий существенно упростить разворачивание NodeJS сервера, разбивание макета сайта на части, шаблонизацию, роутинг. Как правило, в настоящее время работа с NodeJS происходит именно через Express. Давайте с ним разбираться.
+
+## Установка и запуск
+
+Для установки библиотеки следует выполнить команду:
+
+```js showLineNumbers copy 
+npm install express
+```
+
+После этого в вашем файле следует выполнить импорт библиотеки:
+
+```js showLineNumbers copy filename="index.js"
+import express from 'express';
+```
+
+Затем нужно создать объект с Express приложением:
+
+```js showLineNumbers copy filename="index.js"
+let app = express();
+```
+
+После этого с помощью специальной команды app.get мы можем обрабатывать запрошенные урлы. Для примера отдадим для главной страницы какой-нибудь текст:
+
+```js showLineNumbers copy filename="index.js"
+app.get('/', function(req, res) {
+	res.send('hello world');
+});
+```
+
+Развернем наше приложение на каком-нибудь порту:
+
+```js showLineNumbers copy filename="index.js"
+app.listen(3000, function() {
+	console.log('running');
+});
+```
+
+Итоговый код нашего сервера будет выглядеть следующим образом:
+
+```js showLineNumbers copy filename="index.js"
+import express from 'express';
+let app = express();
+
+app.get('/', function(req, res) {
+	res.send('hello world');
+});
+
+app.listen(3000, function() {
+	console.log('running');
+});
+```
+
+## Задания
+
+### Задание 1
+
+Установите Express и проверьте его работу с помощью описанного выше кода.
+
+## Обработка многих урлов
+
+С помощью app.get можно обрабатывать любое количество урлов. Смотрите пример:
+
+```js showLineNumbers copy filename="index.js"
+app.get('/1/', function(req, res) {
+	res.send('page1');
+});
+
+app.get('/2/', function(req, res) {
+	res.send('page2');
+});
+
+app.get('/3/', function(req, res) {
+	res.send('page3');
+});
+```
+
+### Задание 2
+
+Сделайте пять различных урлов, по которым будет отдаваться какой-нибудь текст.
+
+## Объекты запроса и ответа
+
+Посмотрите внимательно на коллбэк, который мы передаем в app.get:
+
+```js showLineNumbers copy filename="index.js"
+app.get('/', function(req, res) {
+	
+});
+```
+
+Как вы видите, у нас есть две переменные. В первую переменную Express положит специальный объект, содержащий данные запроса браузера, а во вторую переменную - специальный объект для управлением ответом сервера на этот запрос.
+
+Конечно же, названия этих переменных могут быть любыми, но принято называть их req (сокращенное от request) и res (сокращенное от responce).
+
+В следующих уроках мы подробно разберемся с возможностями этих специальных объектов.
