@@ -1,0 +1,109 @@
+# Выравнивание флекс элементов по главной оси в CSS
+
+Свойство justify-content позволяет выравнивать элементы по главной оси. Ранее вы уже проходили значения center, space-between, space-around, space-evenly. Давайте теперь изучим еще несколько значений.
+
+Значение flex-start прижимает элементы к началу главной оси, а значение flex-end - к концу. Давайте посмотрим на примерах.
+
+## Примеры 
+
+### Пример 1
+
+Направим главную ось слева направо, задав свойству flex-direction значение row. Прижмем блоки к началу оси. Для этого justify-content установим в значение flex-start:
+
+```css showLineNumbers copy
+.parent {
+	display: flex;
+	flex-direction: row; /* главная ось слева направо */
+	justify-content: flex-start; /* блоки к началу главной оси */
+}
+```
+### Пример 2
+
+Давайте теперь прижмем блоки к концу оси. Для этого justify-content установим в значение flex-end:
+
+```css showLineNumbers copy
+.parent {
+	display: flex;
+	flex-direction: row; /* главная ось слева направо */
+	justify-content: flex-end; /* блоки к концу главной оси */
+}
+```
+
+### Пример 3
+
+Направим теперь главную ось справа налево, задав свойству flex-direction значение row-reverse. Прижмем блоки к началу оси, то есть к правому краю. Для этого justify-content установим в значение flex-start:
+
+```css showLineNumbers copy
+.parent {
+	display: flex;
+	flex-direction: row-reverse; /* главная ось справа налево */
+	justify-content: flex-start; /* блоки к началу главной оси */
+}
+```
+
+### Пример 4
+
+А теперь давайте прижмем блоки к концу главной оси, то есть к левому краю. Для этого justify-content установим в значение flex-end:
+
+```css showLineNumbers copy
+.parent {
+	display: flex;
+	flex-direction: row-reverse; /* главная ось справа налево */
+	justify-content: flex-end; /* блоки к концу главной оси */
+}
+
+```
+
+### Пример 5
+
+В предыдущих примерах главная ось была направлена горизонтально. Давайте теперь перевернем ее и направим вертикально.
+
+Давайте направим главную ось вниз, задав свойству flex-direction значение column.
+
+Прижмем блоки к началу главной оси, то есть к верхнему краю. Для этого justify-content установим в значение flex-start:
+
+```css showLineNumbers copy
+.parent {
+	display: flex;
+	flex-direction: column; /* главная ось сверху вниз */
+	justify-content: flex-start; /* блоки к началу главной оси */
+}
+```
+### Пример 6
+
+Давайте теперь прижмем блоки к концу главной оси, то есть к нижнему краю. Для этого justify-content установим в значение flex-end:
+
+```css showLineNumbers copy
+.parent {
+	display: flex;
+	flex-direction: column; /* главная ось сверху вниз */
+	justify-content: flex-end; /* блоки к концу главной оси */
+}
+```
+
+### Пример 7
+
+Перевернем главную ось, направив ее снизу вверх. Для этого свойству flex-direction зададим значение column-reverse. В этом случае блоки поменяют свой порядок - в начале оси будет стоять последний в HTML коде блок.
+
+Давайте прижмем блоки к началу главной оси, то есть к нижнему краю. Для этого justify-content установим в значение flex-start:
+
+```css showLineNumbers copy
+.parent {
+	display: flex;
+	flex-direction: column-reverse; /* главная ось снизу вверх */
+	justify-content: flex-start; /* блоки к началу главной оси */
+}
+```
+
+### Пример 8
+
+Давайте прижмем блоки к концу главной оси, то есть к верхнему краю. Для этого justify-content установим в значение flex-end:
+
+```css showLineNumbers copy
+.parent {
+	display: flex;
+	flex-direction: column-reverse; /* главная ось снизу вверх */
+	justify-content: flex-end; /* блоки к концу главной оси */
+}
+
+```

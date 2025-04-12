@@ -1,0 +1,26 @@
+# Переворачивание колонки с флекс элементами в CSS
+
+Зададим теперь в свойстве flex-direction значение column-reverse. В этом случае колонка перевернется - элементы будут прижаты к низу. При этом первый элемент будет самым нижним:
+
+```js showLineNumbers copy
+<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+	<div class="child">3</div>
+</div>
+```
+
+```css showLineNumbers copy
+.parent {
+	display: flex;
+	flex-direction: column-reverse;
+	width: 300px;
+	height: 200px;
+	border: 1px solid red;
+}
+.child {
+	width: 50px;
+	height: 50px;
+	border: 1px solid green;
+}
+```
